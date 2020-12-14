@@ -2,7 +2,7 @@
 
 Suppose there is a hat containing 5 blue balls, 4 red balls, and 2 green balls. What is the probability that a random draw of 4 balls will contain at least 1 red ball and 2 green balls? While it would be possible to calculate the probability using advanced mathematics, an easier way is to write a program to perform a large number of experiments to estimate an approximate probability.
 
-For this project, you will write a program to determine the approximate probability of drawing certain balls randomly from a hat. 
+For this project, you will write a program to determine the approximate probability of drawing certain balls randomly from a hat.
 
 First, create a `Hat` class in `prob_calculator.py`. The class should take a variable number of arguments that specify the number of balls of each color that are in the hat. For example, a class object could be created in any of these ways:
 ```
@@ -21,7 +21,7 @@ Next, create an `experiment` function in `prob_calculator.py` (not inside the `H
 * `num_balls_drawn`: The number of balls to draw out of the hat in each experiment.
 * `num_experiments`: The number of experiments to perform. (The more experiments performed, the more accurate the approximate probability will be.)
 
-The `experiment` function should return a probability. 
+The `experiment` function should return a probability.
 
 For example, let's say that you want to determine the probability of getting at least 2 red balls and 1 green ball when you draw 5 balls from from a hat containing 6 black, 4 red, and 3 green. To do this, we perform `N` experiments, count how many times `M` we get at least 2 red balls and 1 green ball, and estimate the probability as `M/N`. Each experiment consists of starting with a hat containing the specified balls, drawing a number of balls, and checking if we got the balls we were attempting to draw.
 
@@ -29,7 +29,7 @@ Here is how you would call the `experiment` function based on the example above 
 
 ```
 hat = Hat(black=6, red=4, green=3)
-probability = experiment(hat=hat, 
+probability = experiment(hat=hat,
                   expected_balls={"red":2,"green":1},
                   num_balls_drawn=5,
                   num_experiments=2000)
@@ -43,7 +43,7 @@ Since this is based on random draws, the probability will be slightly different 
 
 Write your code in `prob_calculator.py`. For development, you can use `main.py` to test your code. Click the "run" button and `main.py` will run.
 
-### Testing 
+### Testing
 
 The unit tests for this project are in `test_module.py`. We imported the tests from `test_module.py` to `main.py` for your convenience. The tests will run automatically whenever you hit the "run" button.
 
