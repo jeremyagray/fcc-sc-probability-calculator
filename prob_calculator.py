@@ -17,10 +17,22 @@ class Hat:
             return self.contents
         else:
             balls = []
+
+            # random.choice()
             for i in range(n):
                 ball = random.choice(self.contents)
                 self.contents.remove(ball)
                 balls.append(ball)
+
+            # one shuffle
+            # random.shuffle(self.contents)
+            # for i in range(n):
+            #     balls.append(self.contents.pop())
+
+            # many shuffles
+            # for i in range(n):
+            #     random.shuffle(self.contents)
+            #     balls.append(self.contents.pop())
 
         return balls
 
