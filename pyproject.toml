@@ -14,7 +14,7 @@ use_parentheses = true
 authors = ["Jeremy A Gray <jeremy.a.gray@gmail.com>"]
 description = "FCC SC Probability Calculator Project"
 name = "fcc-sc-probability-calculator"
-version = "0.0.1"
+version = "0.1.0"
 
 [tool.poetry.dependencies]
 
