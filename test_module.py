@@ -65,6 +65,23 @@ class UnitTests(unittest.TestCase):
             msg="Expected experiment method to return a different probability.",
         )
 
+    def test_prob_experiment_one_expected_ball(self):
+        hat = prob_calculator.Hat(blue=3, red=1, green=1)
+        probability = prob_calculator.experiment(
+            hat=hat,
+            expected_balls={"blue": 3},
+            num_balls_drawn=3,
+            num_experiments=1000,
+        )
+        actual = probability
+        expected = 0.09999
+        self.assertAlmostEqual(
+            actual,
+            expected,
+            delta=0.005,
+            msg="Expected experiment method to return a different probability.",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
