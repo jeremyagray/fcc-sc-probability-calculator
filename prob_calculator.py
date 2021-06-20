@@ -39,22 +39,54 @@ class Hat:
 
 def contents_to_dict(contents):
     dict = {}
+
     for ball in contents:
-        try:
+        # Catch key error.
+        # try:
+        #     dict[ball] = dict[ball] + 1
+        # except KeyError:
+        #     dict[ball] = 1
+
+        # Use the ``in`` operator.
+        if ball in dict:
             dict[ball] = dict[ball] + 1
-        except KeyError:
+        else:
             dict[ball] = 1
+
+        # Use the ``.get()`` method.
+        # val = dict.get(ball, None)
+        # if val is None:
+        #     dict[ball] = 1
+        # else:
+        #     dict[ball] = dict[ball] + 1
+
     return dict
 
 
 def good_draw_p(draw, goal):
     for k, v in goal.items():
-        try:
-            draw[k]
-        except KeyError:
+        # Catch the KeyError.
+        # try:
+        #     draw[k]
+        # except KeyError:
+        #     return False
+        # if draw[k] < v:
+        #     return False
+
+        # Use the ``in`` operator.
+        # if k in draw:
+        #     if draw[k] < v:
+        #         return False
+        # else:
+        #     return False
+
+        # Use the ``.get()`` method.
+        dv = draw.get(k, None)
+        if dv is None:
             return False
-        if draw[k] < v:
+        elif dv < v:
             return False
+
     return True
 
 
